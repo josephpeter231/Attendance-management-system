@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.username }}'s Attendance Summary</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css">
+</head>
+<body>
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl mb-4">{{ user.username }}'s Attendance Summary for {{ month }}/{{ year }}</h1>
+        <table class="min-w-full bg-white border border-gray-200">
+            <thead>
+                <tr>
+                    <th class="border px-4 py-2">Date</th>
+                    <th class="border px-4 py-2">Entry Time</th>
+                    <th class="border px-4 py-2">Exit Time</th>
+                    <th class="border px-4 py-2">Hours Worked</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for attendance in attendances %}
+                    <tr>
+                        <td class="border px-4 py-2">{{ attendance.date }}</td>
+                        <td class="border px-4 py-2">{{ attendance.entry_time }}</td>
+                        <td class="border px-4 py-2">{{ attendance.exit_time }}</td>
+                        <td class="border px-4 py-2">{{ attendance.hours_worked }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="4" class="text-center py-4">No attendance records found for this month.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        
+
+        <a href="/" class="inline-block mt-4 bg-blue-500 text-white py-2 px-4 rounded">Back to Home</a>
+    </div>
+</body>
+</html>

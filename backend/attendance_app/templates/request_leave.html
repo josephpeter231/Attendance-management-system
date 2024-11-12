@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Request</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css">
+</head>
+<body>
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl mb-4">Leave Request Form</h1>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="leave_date" class="block text-lg font-medium">Leave Date</label>
+                <input type="date" id="leave_date" name="leave_date" class="w-full px-4 py-2 border rounded" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="leave_type" class="block text-lg font-medium">Leave Type</label>
+                <select id="leave_type" name="leave_type" class="w-full px-4 py-2 border rounded" required>
+                    <option value="Sick Leave">Sick Leave</option>
+                    <option value="Casual Leave">Casual Leave</option>
+                    <option value="Vacation Leave">Vacation Leave</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="reason" class="block text-lg font-medium">Reason</label>
+                <textarea id="reason" name="reason" rows="4" class="w-full px-4 py-2 border rounded" required></textarea>
+            </div>
+
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Submit Leave Request</button>
+        </form>
+
+        <a href="/" class="inline-block mt-4 bg-blue-500 text-white py-2 px-4 rounded">Back to Home</a>
+    </div>
+</body>
+</html>
