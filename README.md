@@ -9,3 +9,15 @@
 2. Admin approval for leave
 3. Permission granting
 4. To show data in a graphical manner 
+
+
+## Snapshots
+
+1. Adding users
+![Users adding](screenshots/adding%20user.png)
+
+2. Marking Attendance
+![Attendance Marking](screenshots/image.png)
+
+3. For specific users
+![Users ](screenshots/specific%20user.png)
